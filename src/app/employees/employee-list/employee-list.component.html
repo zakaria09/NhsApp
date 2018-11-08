@@ -4,6 +4,18 @@
     <mat-header-cell *matHeaderCellDef>Full Name</mat-header-cell>
     <mat-cell *matCellDef="let user">{{ user.fullName}}</mat-cell>
   </ng-container>
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.email}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="department">
+    <mat-header-cell *matHeaderCellDef>Department</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.department}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="hireDate">
+    <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.hireDate}}</mat-cell>
+  </ng-container>
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>

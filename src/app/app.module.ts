@@ -12,6 +12,7 @@ import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeService } from './shared/employee.service';
 import { environment } from '../environments/environment';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component'
+import { AppRoutingModule } from './app-routing.module'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AppRoutingModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
