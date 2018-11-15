@@ -6,8 +6,8 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 
 const routes: Routes = [
-    { path: 'employee', component: EmployeeComponent },
-    { path: 'employeelist', component: EmployeeListComponent },
+    { path: 'breakglass', component: EmployeeComponent },
+    { path: 'notifications', component: EmployeeListComponent },
     { path: 'signin', component: SigninComponent },
     { path: 'signup', component: SignupComponent },
 ];

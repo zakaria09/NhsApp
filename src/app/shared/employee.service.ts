@@ -17,10 +17,10 @@ export class EmployeeService {
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', Validators.email),
     mobile: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    city: new FormControl(''),
-    gender: new FormControl('1'),
-    department: new FormControl(0),
-    hireDate: new FormControl(''),
+    reasonForUnfilledShift: new FormControl(''),
+    ward: new FormControl(0),
+    optionsConsidered: new FormControl(''),
+    date: new FormControl(''),
     isPermanent: new FormControl(false)
   });
 
@@ -30,10 +30,10 @@ export class EmployeeService {
       fullName: '',
       email: '',
       mobile: '',
-      city: '',
-      gender: '1',
-      department: 0,
-      hireDate: '',
+      reasonForUnfilledShift: '',
+      ward: 0,
+      date: '',
+      optionsConsidered: '',
       isPermanent: false
     });
   }
@@ -48,10 +48,10 @@ export class EmployeeService {
       fullName: employee.fullName,
       email: employee.email,
       mobile: employee.mobile,
-      city: employee.city,
-      gender: employee.gender,
-      department: employee.department,
-      hireDate: employee.hireDate,
+      reasonForUnfilledShift: employee.reasonForUnfilledShift,
+      ward: employee.ward,
+      date: employee.date,
+      optionsConsidered: employee.optionsConsidered,
       isPermanent: employee.isPermanent, 
     }); 
   }

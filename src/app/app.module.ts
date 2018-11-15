@@ -7,6 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { AppComponent } from './app.component';
@@ -50,6 +51,7 @@ import { UserService } from './auth/user.service'
     MatListModule,
     FormsModule,
     AngularFireAuthModule,
+    MatDialogModule,
   ],
   providers: [EmployeeService, AuthService, UserService],
   bootstrap: [AppComponent]

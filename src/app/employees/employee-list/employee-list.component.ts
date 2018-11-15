@@ -13,7 +13,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private service: EmployeeService, public user: UserService) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['fullName', 'email', 'hireDate', 'department'];
+  displayedColumns: string[] = ['fullName', 'date', 'ward', 'reasonForUnfilledShift', 'actions'];
 
   ngOnInit() {
     this.service.getEmployees().subscribe(

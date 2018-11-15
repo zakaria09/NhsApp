@@ -11,8 +11,8 @@ import { NotificationService } from '../../shared/notification.service'
 export class EmployeeComponent implements OnInit {
 
   constructor(private service: EmployeeService, private notificationService: NotificationService) { }
-
-  departments = [
+  
+  ward = [
     { id: 3, value: 'Dep 1' },
     { id: 2, value: 'Dep 2' },
     { id: 3, value: 'Dep 3' }];
