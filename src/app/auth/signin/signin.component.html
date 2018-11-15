@@ -1,6 +1,12 @@
 <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2">
-        <form (ngSubmit)="onSignin(f)" #f="ngForm">
+        <div *ngIf="user.uid | async as uid; else login">
+            <div class="alert alert-success" role="alert">The user is logged in {{ uid }}</div>
+            <div class="alert alert-success" role="alert">You are signed in! </div>
+              <div *ngIf="user.isAdmin | async"></div>
+            </div>
+        <ng-template #login>
+          <form (ngSubmit)="onSignin(f)" #f="ngForm">
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" class="form-control" ngModel>
@@ -11,6 +17,7 @@
               </div>
             <button class="btn btn-primary" type="submit">Sign In</button>
           </form>
+        </ng-template>
     </div>
   </div>
   

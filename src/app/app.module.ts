@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FormsModule } from '@angular/forms';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
@@ -20,6 +22,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthService } from './auth/auth.service';
+import { UserService } from './auth/user.service'
 
 @NgModule({
   declarations: [
@@ -45,9 +48,10 @@ import { AuthService } from './auth/auth.service';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    AngularFireAuthModule,
   ],
-  providers: [EmployeeService, AuthService],
+  providers: [EmployeeService, AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

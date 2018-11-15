@@ -1,4 +1,9 @@
-
+<div *ngIf="user.uid | async as uid; else login">
+  <div class="alert alert-success" role="alert">You are signed in!</div>
+</div>
+<ng-template #login>
+  <div class="alert alert-danger" role="alert">You Must Sign In!</div>
+</ng-template>
 <mat-table [dataSource]="listData">
   <ng-container matColumnDef="fullName">
     <mat-header-cell *matHeaderCellDef>Full Name</mat-header-cell>
