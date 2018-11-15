@@ -11,7 +11,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private authService: AuthService, 
+  constructor(public authService: AuthService, 
               private angularFireAuth: AngularFireAuth,
               public user: UserService) { }
 
@@ -26,5 +26,10 @@ export class SigninComponent implements OnInit {
     const email = forms.value.email;
     const password = forms.value.password;
     this.authService.signinUser(email, password)
+  }
+
+  showUser() {
+    // show user 
+    return console.log(this.angularFireAuth.auth.currentUser);
   }
 }
