@@ -7,7 +7,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { AppComponent } from './app.component';
@@ -33,7 +32,7 @@ import { UserService } from './auth/user.service'
     EmployeeListComponent,
     MainNavComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,9 +50,14 @@ import { UserService } from './auth/user.service'
     MatListModule,
     FormsModule,
     AngularFireAuthModule,
-    MatDialogModule,
   ],
+  exports: [
+     EmployeeComponent,
+     EmployeesComponent,
+     EmployeeListComponent ],
+  entryComponents: [EmployeeComponent],
   providers: [EmployeeService, AuthService, UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

@@ -13,10 +13,10 @@
     <mat-header-cell *matHeaderCellDef>ward</mat-header-cell>
     <mat-cell *matCellDef="let user">{{ user.ward}}</mat-cell>
   </ng-container>
-  <ng-container matColumnDef="date">
+  <!-- <ng-container matColumnDef="date">
     <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
     <mat-cell *matCellDef="let user">{{ user.date}}</mat-cell>
-  </ng-container>
+  </ng-container> -->
   <ng-container matColumnDef="reasonForUnfilledShift">
     <mat-header-cell *matHeaderCellDef>reason</mat-header-cell>
     <mat-cell *matCellDef="let user">{{ user.reasonForUnfilledShift}}</mat-cell>
@@ -24,8 +24,8 @@
   <ng-container matColumnDef="actions">
     <mat-header-cell *matHeaderCellDef></mat-header-cell>
     <mat-cell *matCellDef="let row">
-      <button class="btn btn-primary">More Info</button>
-      <button class="btn btn-danger">Reject</button>
+      <button class="btn btn-primary" (click)="editInfo(row)">More Info</button>
+      <button mat-icon-button color="warn" (click)="onDelete(row.$key)"><mat-icon>delete_outline</mat-icon></button>
     </mat-cell> 
   </ng-container>
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

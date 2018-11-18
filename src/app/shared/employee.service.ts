@@ -20,7 +20,7 @@ export class EmployeeService {
     reasonForUnfilledShift: new FormControl(''),
     ward: new FormControl(0),
     optionsConsidered: new FormControl(''),
-    date: new FormControl(''),
+    //date: new FormControl(''),
     isPermanent: new FormControl(false)
   });
 
@@ -32,7 +32,7 @@ export class EmployeeService {
       mobile: '',
       reasonForUnfilledShift: '',
       ward: 0,
-      date: '',
+      //date: '',
       optionsConsidered: '',
       isPermanent: false
     });
@@ -50,7 +50,7 @@ export class EmployeeService {
       mobile: employee.mobile,
       reasonForUnfilledShift: employee.reasonForUnfilledShift,
       ward: employee.ward,
-      date: employee.date,
+      //date: employee.date,
       optionsConsidered: employee.optionsConsidered,
       isPermanent: employee.isPermanent, 
     }); 
@@ -58,5 +58,9 @@ export class EmployeeService {
 
   deleteEmployee($key: string) {
     this.employeeList.remove($key);
+  }
+
+  populateForm(employee) {
+    this.form.setValue(employee);
   }
 }
