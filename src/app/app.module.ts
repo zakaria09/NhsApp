@@ -23,6 +23,9 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthService } from './auth/auth.service';
 import { UserService } from './auth/user.service'
+import { GoldenkeyComponent } from './goldenkey/goldenkey.component';
+import { ActivitiesComponent } from './activities/activities.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,8 @@ import { UserService } from './auth/user.service'
     MainNavComponent,
     SigninComponent,
     SignupComponent,
+    GoldenkeyComponent,
+    ActivitiesComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,13 +55,14 @@ import { UserService } from './auth/user.service'
     MatListModule,
     FormsModule,
     AngularFireAuthModule,
+    HttpModule,
   ],
   exports: [
      EmployeeComponent,
      EmployeesComponent,
      EmployeeListComponent ],
   entryComponents: [EmployeeComponent],
-  providers: [EmployeeService, AuthService, UserService],
+  providers: [EmployeeService, AuthService, UserService, GoldenkeyComponent],
   bootstrap: [AppComponent],
   
 })

@@ -2,15 +2,27 @@ import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Capability } from 'protractor';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { Http } from '@angular/http';
+import 'rxjs/Rx';
+import { Response } from '@angular/http';
+import { Goldenkey } from 'src/goldenkeys';
  
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  constructor(private firebase : AngularFireDatabase) { }
+  private goldenkeyPath = 'goldenkey';
+
+  constructor(private firebase : AngularFireDatabase,
+               private db: AngularFireDatabase,
+               public http: Http) { }
 
   employeeList: AngularFireList<any>;
+
+  goldenKey: AngularFireList<any>;
 
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
@@ -20,7 +32,7 @@ export class EmployeeService {
     reasonForUnfilledShift: new FormControl(''),
     ward: new FormControl(0),
     optionsConsidered: new FormControl(''),
-    //date: new FormControl(''),
+    goldenkey: new FormControl(''),
     isPermanent: new FormControl(false)
   });
 
@@ -32,7 +44,7 @@ export class EmployeeService {
       mobile: '',
       reasonForUnfilledShift: '',
       ward: 0,
-      //date: '',
+      goldenkey: '',
       optionsConsidered: '',
       isPermanent: false
     });
@@ -50,7 +62,7 @@ export class EmployeeService {
       mobile: employee.mobile,
       reasonForUnfilledShift: employee.reasonForUnfilledShift,
       ward: employee.ward,
-      //date: employee.date,
+      goldenkey: employee.goldenkey,
       optionsConsidered: employee.optionsConsidered,
       isPermanent: employee.isPermanent, 
     }); 
@@ -63,4 +75,32 @@ export class EmployeeService {
   populateForm(employee) {
     this.form.setValue(employee);
   }
+
+  insertGoldenkey(data) {
+    const key = this.db.database.ref(this.goldenkeyPath);
+    key.push({'goldenkey' :data});
+    console.log('success');
+  }
+
+  getGoldenkeys() {
+    this.goldenKey = this.firebase.list('goldenkey');
+    return this.goldenKey.snapshotChanges();
+  }
+
+  initializeKeyForm() {
+    this.form.setValue({
+      $key: null,
+      goldenkey: '',
+    })
+  }
+
+/*   getGoldenKeys() {
+    return this.http.get('https://nhscrud.firebaseio.com/emplyees.json')
+      .map(
+        (respone: Response) => {
+          const data = respone.json();
+          return data
+        }
+      )
+  } */
 }

@@ -5,6 +5,7 @@ import { UserService } from '../../auth/user.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { EmployeeComponent } from '../employee/employee.component';
 import { NotificationService } from 'src/app/shared/notification.service';
+import { GoldenkeyComponent } from 'src/app/goldenkey/goldenkey.component';
 
 @Component({
   selector: 'app-employee-list',
@@ -16,7 +17,8 @@ export class EmployeeListComponent implements OnInit {
   constructor(private service: EmployeeService,
      public user: UserService,
      private dialog: MatDialog,
-     private notificationService: NotificationService) { }
+     private notificationService: NotificationService,
+     private key: GoldenkeyComponent) { }
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['fullName', 'ward', 'reasonForUnfilledShift', 'actions'];
@@ -47,6 +49,12 @@ export class EmployeeListComponent implements OnInit {
       this.service.deleteEmployee($key);
       this.notificationService.warn('! Deleted Successfully'); 
     }
-    
+  }
+
+  addGoldenkey() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '60%';
+    this.dialog.open(GoldenkeyComponent, dialogConfig);
   }
 }

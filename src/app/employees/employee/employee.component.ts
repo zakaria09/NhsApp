@@ -13,9 +13,9 @@ export class EmployeeComponent implements OnInit {
   constructor(private service: EmployeeService, private notificationService: NotificationService) { }
   
   ward = [
-    { id: 3, value: 'Dep 1' },
-    { id: 2, value: 'Dep 2' },
-    { id: 3, value: 'Dep 3' }];
+    { id: 1, value: 'Ward 15' },
+    { id: 2, value: 'Ward 25' },
+    { id: 3, value: 'Ward 20' }];
 
   
 

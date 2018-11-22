@@ -1,0 +1,13 @@
+
+
+
+<form (ngSubmit)="addgoldenkey(f)" #f="ngForm">
+  <div class="form-group">
+      <label for="goldenkey">golden key</label>
+      <input type="goldenkey" id="goldenkey" name="goldenkey" class="form-control" ngModel>
+    </div>
+  <button class="btn btn-primary" type="submit">Add Golden Key</button>
+</form>
+<div *ngIf="isAccepted">
+  <div class="alert alert-success" role="alert">Golden Key was successfully submitted!</div>
+</div>
