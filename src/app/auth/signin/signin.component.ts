@@ -12,7 +12,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class SigninComponent implements OnInit {
 
   constructor(public authService: AuthService, 
-              private angularFireAuth: AngularFireAuth,
+              public angularFireAuth: AngularFireAuth,
               public user: UserService) { }
 
   ngOnInit() {

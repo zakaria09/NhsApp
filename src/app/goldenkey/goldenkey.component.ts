@@ -22,7 +22,7 @@ export class GoldenkeyComponent implements OnInit {
   } */
 
 
-  addgoldenkey(form: NgForm, key) {
+  addgoldenkey(form: NgForm) {
     var val = form.value.goldenkey;
     this.service.insertGoldenkey(form.value.goldenkey);
     if (val != '') {
