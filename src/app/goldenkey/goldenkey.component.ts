@@ -24,7 +24,7 @@ export class GoldenkeyComponent implements OnInit {
 
   addgoldenkey(form: NgForm) {
     var val = form.value.goldenkey;
-    this.service.insertGoldenkey(form.value.goldenkey);
+    this.service.insertGoldenkey(form.value.goldenkey, form.value.managerName);
     if (val != '') {
       this.isAccepted = true;
     }

@@ -6,10 +6,11 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { GoldenkeyComponent } from './goldenkey/goldenkey.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-    { path: 'breakglass', component: EmployeeComponent },
-    { path: 'notifications', component: EmployeeListComponent },
+    { path: 'breakglass', component: EmployeeComponent, canActivate:[AuthGuard]},
+    { path: 'notifications', component: EmployeeListComponent, canActivate:[AuthGuard]},
     { path: 'signin', component: SigninComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'activities', component: ActivitiesComponent },

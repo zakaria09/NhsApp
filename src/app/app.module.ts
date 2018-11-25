@@ -26,6 +26,7 @@ import { UserService } from './auth/user.service'
 import { GoldenkeyComponent } from './goldenkey/goldenkey.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { HttpModule } from '@angular/http';
+import { AuthGuard } from './auth.guard'
 
 @NgModule({
   declarations: [
@@ -61,8 +62,8 @@ import { HttpModule } from '@angular/http';
      EmployeeComponent,
      EmployeesComponent,
      EmployeeListComponent ],
-  entryComponents: [EmployeeComponent],
-  providers: [EmployeeService, AuthService, UserService, GoldenkeyComponent],
+  entryComponents: [EmployeeComponent, GoldenkeyComponent],
+  providers: [EmployeeService, AuthService, UserService, GoldenkeyComponent, AuthGuard],
   bootstrap: [AppComponent],
   
 })
