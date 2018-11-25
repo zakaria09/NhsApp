@@ -13,7 +13,7 @@ export class ActivitiesComponent implements OnInit {
   constructor(private service: EmployeeService) { }
 
   ListData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['managerName', 'goldenkey'];
+  displayedColumns: string[] = ['status', 'managerName', 'goldenkey', 'reason'];
 
   ngOnInit() {
     this.service.getGoldenkeys().subscribe(

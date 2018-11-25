@@ -76,10 +76,12 @@ export class EmployeeService {
     this.form.setValue(employee);
   }
 
-  insertGoldenkey(data, name) {
+  insertGoldenkey(data, name, status, reason) {
     const key = this.db.database.ref(this.goldenkeyPath);
-    key.push({'goldenkey' :data, 
-      'managerName': name
+    key.push({'goldenkey': data, 
+      'managerName': name,
+      'status': status,
+      'reason': reason,
     });
     console.log('success');
   }

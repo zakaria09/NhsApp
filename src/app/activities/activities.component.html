@@ -8,6 +8,14 @@
       <mat-header-cell *matHeaderCellDef>Manager Name</mat-header-cell>
       <mat-cell *matCellDef="let row">{{ row.managerName }}</mat-cell>
     </ng-container>
+    <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.status }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="reason">
+        <mat-header-cell *matHeaderCellDef>Reason</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.reason }}</mat-cell>
+      </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>

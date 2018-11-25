@@ -13,6 +13,11 @@ export class GoldenkeyComponent implements OnInit {
 
   constructor(private service: EmployeeService) { }
 
+  status = [
+    { value: 'Accept', display: 'Accept' },
+    { value: 'Reject', display: 'Reject' },
+  ]
+
   ngOnInit() {
   }
 
@@ -24,7 +29,7 @@ export class GoldenkeyComponent implements OnInit {
 
   addgoldenkey(form: NgForm) {
     var val = form.value.goldenkey;
-    this.service.insertGoldenkey(form.value.goldenkey, form.value.managerName);
+    this.service.insertGoldenkey(form.value.goldenkey, form.value.managerName, form.value.status, form.value.reason);
     if (val != '') {
       this.isAccepted = true;
     }
