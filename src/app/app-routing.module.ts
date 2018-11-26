@@ -7,8 +7,10 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { GoldenkeyComponent } from './goldenkey/goldenkey.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+    { path: '', component: HomeComponent },
     { path: 'breakglass', component: EmployeeComponent, canActivate:[AuthGuard]},
     { path: 'notifications', component: EmployeeListComponent, canActivate:[AuthGuard]},
     { path: 'signin', component: SigninComponent },

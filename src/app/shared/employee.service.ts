@@ -8,6 +8,7 @@ import { Http } from '@angular/http';
 import 'rxjs/Rx';
 import { Response } from '@angular/http';
 import { Goldenkey } from 'src/goldenkeys';
+import { DatePipe } from '@angular/common';
  
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class EmployeeService {
 
   constructor(private firebase : AngularFireDatabase,
                private db: AngularFireDatabase,
-               public http: Http) { }
+               public http: Http,
+               private datePipe: DatePipe) { }
 
   employeeList: AngularFireList<any>;
 
@@ -32,7 +34,9 @@ export class EmployeeService {
     reasonForUnfilledShift: new FormControl(''),
     ward: new FormControl(0),
     optionsConsidered: new FormControl(''),
-    goldenkey: new FormControl(''),
+    date: new FormControl(''),
+    startTime: new FormControl(''),
+    finishTime: new FormControl(''),
     isPermanent: new FormControl(false)
   });
 
@@ -44,8 +48,10 @@ export class EmployeeService {
       mobile: '',
       reasonForUnfilledShift: '',
       ward: 0,
-      goldenkey: '',
       optionsConsidered: '',
+      date: '',
+      startTime: '',
+      finishTime: '',
       isPermanent: false
     });
   }
@@ -62,8 +68,10 @@ export class EmployeeService {
       mobile: employee.mobile,
       reasonForUnfilledShift: employee.reasonForUnfilledShift,
       ward: employee.ward,
-      goldenkey: employee.goldenkey,
       optionsConsidered: employee.optionsConsidered,
+      date: this.datePipe.transform(employee.date, 'yyyy-MM-dd'),
+      startTime: employee.startTime,
+      finishTime: employee.finishTime,
       isPermanent: employee.isPermanent, 
     }); 
   }

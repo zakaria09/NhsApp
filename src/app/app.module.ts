@@ -26,7 +26,9 @@ import { UserService } from './auth/user.service'
 import { GoldenkeyComponent } from './goldenkey/goldenkey.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { HttpModule } from '@angular/http';
-import { AuthGuard } from './auth.guard'
+import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { AuthGuard } from './auth.guard'
     SignupComponent,
     GoldenkeyComponent,
     ActivitiesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,7 @@ import { AuthGuard } from './auth.guard'
      EmployeesComponent,
      EmployeeListComponent ],
   entryComponents: [EmployeeComponent, GoldenkeyComponent],
-  providers: [EmployeeService, AuthService, UserService, GoldenkeyComponent, AuthGuard],
+  providers: [EmployeeService, AuthService, UserService, GoldenkeyComponent, AuthGuard, DatePipe],
   bootstrap: [AppComponent],
   
 })

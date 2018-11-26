@@ -10,8 +10,11 @@ import { NotificationService } from '../../shared/notification.service'
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(public service: EmployeeService, private notificationService: NotificationService) { }
+  constructor(public service: EmployeeService,
+    private notificationService: NotificationService) { }
   
+  myDate = new Date();
+
   ward = [
     { id: 1, value: 'Ward 15' },
     { id: 2, value: 'Ward 25' },
