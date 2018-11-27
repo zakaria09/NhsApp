@@ -16,6 +16,7 @@ export class GoldenkeyComponent implements OnInit {
   status = [
     { value: 'Accept', display: 'Accept' },
     { value: 'Reject', display: 'Reject' },
+
   ]
 
   ngOnInit() {
@@ -36,4 +37,6 @@ export class GoldenkeyComponent implements OnInit {
     form.reset();
     
   }
+
 }
+
