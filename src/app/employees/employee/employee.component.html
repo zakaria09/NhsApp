@@ -1,11 +1,15 @@
+<body>
+<div id="formcontainer">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2">
 <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
-  <mat-grid-list cols="2" rowHeight="350px">
+  <mat-grid-list cols="1" rowHeight="350px">
     <mat-grid-tile>
       <div class="controles-container">
         <input type="hidden" formControlName="$key">
         <mat-form-field>
           <input formControlName="fullName" matInput placeholder="Full Name*">
-          <mat-error>This field is mandatory.</mat-error>
+          <mat-error>Invalid email address.</mat-error>
         </mat-form-field>
         <mat-form-field>
           <input formControlName="email" matInput placeholder="Email">
@@ -14,7 +18,7 @@
         <mat-form-field>
           <input formControlName="mobile" matInput placeholder="Mobile*">
           <mat-error *ngIf="service.form.controls['mobile'].errors?.required">This field is mandatory.</mat-error>
-          <mat-error *ngIf="service.form.controls['mobile'].errors?.minlength">Minimum 8 charactors needed.</mat-error>
+          <mat-error *ngIf="service.form.controls['mobile'].errors?.minlength">Minimum 8 characters needed.</mat-error>
         </mat-form-field>
         <mat-form-field>
           <input formControlName="reasonForUnfilledShift" matInput placeholder="Reason For Unfilled Shift">
@@ -29,7 +33,7 @@
         <div class="add-bottom-padding">
         </div>
         <mat-form-field>
-          <mat-select formControlName="ward" placeholder="ward">
+          <mat-select formControlName="ward" placeholder="Ward">
             <mat-option>None</mat-option>
             <ng-container *ngFor="let ward of ward">
               <mat-option value="{{ward.id}}">{{ward.value}}</mat-option>
@@ -41,11 +45,6 @@
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field> -->
-        <mat-form-field>
-            <input formControlName="date" placeholder="Date of shift" matInput [matDatepicker]="picker" placeholder="Date">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
           <mat-form-field>
               <input formControlName="startTime" matInput placeholder="Start Time">
             </mat-form-field>
@@ -63,3 +62,8 @@
     </mat-grid-tile>
   </mat-grid-list>
 </form>
+</div>
+    </div>
+    </div>
+
+    </body>

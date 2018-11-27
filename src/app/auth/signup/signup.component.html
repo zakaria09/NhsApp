@@ -1,20 +1,28 @@
+<div class="formcontainer">
 <div class="row">
   <div class="col-xs-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2">
       <form (ngSubmit)="onSignup(f)" #f="ngForm">
           <div class="form-group">
-              <label for="name">Name</label>
-              <input type="name" id="name" name="name" class="form-control" ngModel>
+              <div class="inner-addon left-addon">
+                  <i class="fa fa-user"></i>
+              <input placeholder="Name" type="name" id="name" name="name" class="form-control" ngModel>
+          </div>
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" class="form-control" ngModel>
+              <div class="inner-addon left-addon">
+                  <i class="fa fa-envelope"></i>
+            <input placeholder="Email" type="email" id="email" name="email" class="form-control" ngModel>
+          </div>
           </div>
           <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" id="password" name="password" class="form-control" ngModel>
+              <div class="inner-addon left-addon">
+                  <i class="fa fa-lock"></i>
+              <input placeholder="Password" type="password" id="password" name="password" class="form-control" ngModel>
+            </div>
             </div>
           <button class="btn btn-primary" type="submit">Sign Up</button>
         </form>
   </div>
+</div>
 </div>
 

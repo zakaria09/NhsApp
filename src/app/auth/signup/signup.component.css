@@ -1,0 +1,76 @@
+.formcontainer {
+    max-width:60%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5%;
+    color: #636363;
+}
+
+button {
+    width: 100%;
+    border-color:#005EB8;
+    text-decoration-color: #005EB8;
+}
+.inner-addon {
+    position: relative;
+}
+.inner-addon .fa{
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+.left-addon .fa{
+    left: 0px;
+}
+.left-addon input{
+    padding-left: 30px;
+}
+/* SMARTPHONES PORTRAIT */
+
+@media only 
+screen and (min-width: 
+300px) {
+
+.formcontainer {
+
+max-width: 
+90%;
+
+}
+
+}
+
+/* SMARTPHONES LANDSCAPE */
+
+@media only screen and (min-width: 480px) {
+
+.formcontainer {
+max-width: 
+80%;
+
+}
+}
+
+
+/* TABLETS PORTRAIT */
+
+@media only screen and (min-width: 768px) {
+
+.formcontainer {
+max-width: 70%;
+}
+
+}
+
+
+
+/* TABLET LANDSCAPE / DESKTOP */
+
+@media only screen and (min-width: 1024px) {
+
+.formcontainer {
+max-width: 50%;
+
+}
+
+} 

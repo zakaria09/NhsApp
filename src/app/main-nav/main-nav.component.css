@@ -1,5 +1,6 @@
 .sidenav-container {
   height: 100%;
+  font-family: 'Palantino', sans-serif;
 }
 
 .sidenav {
@@ -9,7 +10,7 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  background-color: #0055BF;
+  background-color: #005EB8;
 }
 
 a #logo {
@@ -17,7 +18,11 @@ a #logo {
   height: 100%;
   top: 0;
   right: 0;
-  background-color: #0055BF;
+  background-color: #005EB8;
   padding: 10px;
   font-style: italic;
+}
+
+#navlink {
+  font-family: 'Palantino', sans-serif;
 }
